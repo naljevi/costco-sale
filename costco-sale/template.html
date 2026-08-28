@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>코스트코 할인표</title>
+<meta name="description" content="__TODAY__ 기준 진행 중인 코스트코 할인 __COUNT__건. 종료일·분류·할인율로 찾아볼 수 있습니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="코스트코 할인표">
+<meta property="og:description" content="__TODAY__ 기준 진행 중인 코스트코 할인 __COUNT__건. 매일 갱신됩니다.">
+<meta property="og:locale" content="ko_KR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#FBF8F4; --surface:#FFFFFF; --surface2:#F5F0E9;
+  --ink:#1F1A17; --muted:#7C716A; --line:#E7DFD5;
+  --accent:#A81E28; --accent-soft:#F6E4E2; --on-accent:#FFFFFF;
+  --warn:#9A5400; --warn-soft:#FAECD9;
+  --calm:#2F6B5E; --calm-soft:#E1EFEA;
+  --shadow:0 1px 2px rgba(31,26,23,.06),0 8px 24px -16px rgba(31,26,23,.25);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#15120F; --surface:#1E1A16; --surface2:#241F1A;
+    --ink:#F1EBE4; --muted:#A3968C; --line:#332C25;
+    --accent:#E9737B; --accent-soft:#3A2222; --on-accent:#1B1210;
+    --warn:#E0A458; --warn-soft:#3A2C1A;
+    --calm:#7FC4B2; --calm-soft:#1D2E2A;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15120F; --surface:#1E1A16; --surface2:#241F1A;
+  --ink:#F1EBE4; --muted:#A3968C; --line:#332C25;
+  --accent:#E9737B; --accent-soft:#3A2222; --on-accent:#1B1210;
+  --warn:#E0A458; --warn-soft:#3A2C1A;
+  --calm:#7FC4B2; --calm-soft:#1D2E2A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans KR",-apple-system,BlinkMacSystemFont,"Malgun Gothic",sans-serif;
+  font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 20px 80px;display:flex;flex-direction:column;gap:28px}
+header{display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--line);padding-bottom:24px}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:"Gowun Batang",Georgia,serif;font-weight:700;font-size:clamp(28px,5vw,42px);line-height:1.2;margin:0;text-wrap:balance}
+.sub{color:var(--muted);font-size:14px;max-width:62ch;margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:2px}
+.stat b{font-size:24px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}
+.stat span{font-size:12px;color:var(--muted)}
+.stat.urgent b{color:var(--warn)}
+.controls{display:flex;flex-direction:column;gap:12px;position:sticky;top:0;background:var(--bg);padding:12px 0;z-index:5;border-bottom:1px solid var(--line)}
+.row1{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+input[type=search],select{font-family:inherit;font-size:14px;color:var(--ink);background:var(--surface);
+  border:1px solid var(--line);border-radius:8px;padding:9px 12px}
+input[type=search]{flex:1;min-width:200px}
+input[type=search]:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-family:inherit;font-size:12.5px;cursor:pointer;border-radius:999px;
+  border:1px solid var(--line);background:var(--surface);color:var(--muted);
+  padding:6px 12px;transition:background .15s,color .15s,border-color .15s}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.count{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:640px}
+thead th{position:sticky;top:0;background:var(--surface2);color:var(--muted);
+  font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+  text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+th.num,td.num{text-align:right;font-variant-numeric:tabular-nums}
+tbody td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--surface2)}
+tr.done td{opacity:.42}
+tr.done .nm{text-decoration:line-through}
+.nm{font-weight:500}
+.cat{font-size:11.5px;color:var(--muted);white-space:nowrap}
+.price{font-weight:600;font-size:15px}
+.rate{display:inline-block;min-width:44px;text-align:center;border-radius:6px;padding:2px 7px;
+  font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums;background:var(--calm-soft);color:var(--calm)}
+.rate.hot{background:var(--accent-soft);color:var(--accent)}
+.end{font-size:12.5px;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--muted)}
+.end.urgent{color:var(--warn);font-weight:600}
+.end .tag{display:block;font-size:10.5px;letter-spacing:.05em}
+input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent);cursor:pointer}
+.empty{padding:40px;text-align:center;color:var(--muted);font-size:14px}
+footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:20px;display:flex;flex-direction:column;gap:6px}
+@media (max-width:640px){.wrap{padding:24px 14px 60px}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">__TODAY__ 기준 · 매일 갱신</div>
+  <h1>지금 코스트코에서 할인 중인 것</h1>
+  <p class="sub">진행 중인 할인 <b id="total">0</b>건. 표시 가격은 할인 적용가이며, 점포별 재고와 종료일은 다를 수 있습니다.</p>
+</header>
+
+<div class="stats">
+  <div class="stat"><b id="s-all">0</b><span>진행 중인 할인 품목</span></div>
+  <div class="stat urgent"><b id="s-urgent">0</b><span>3일 안에 마감</span></div>
+  <div class="stat"><b id="s-week">0</b><span>일주일 안에 마감</span></div>
+  <div class="stat"><b id="s-later">0</b><span>그 이후</span></div>
+</div>
+
+<div class="controls">
+  <div class="row1">
+    <input type="search" id="q" placeholder="상품명 검색 (예: 스팸, 만두, 위스키)" aria-label="상품명 검색">
+    <select id="sort" aria-label="정렬">
+      <option value="rate">할인율 높은 순</option>
+      <option value="price">가격 낮은 순</option>
+      <option value="priced">가격 높은 순</option>
+      <option value="end">마감 빠른 순</option>
+      <option value="name">이름순</option>
+    </select>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="chips" id="grpchips">
+    <button class="chip" data-g="all" aria-pressed="true">전체 기간</button>
+    <button class="chip" data-g="urgent" aria-pressed="false">마감 임박</button>
+    <button class="chip" data-g="week" aria-pressed="false">이번 주</button>
+    <button class="chip" data-g="later" aria-pressed="false">여유 있음</button>
+  </div>
+  <div class="chips" id="catchips"></div>
+</div>
+
+<div class="tablewrap">
+  <table>
+    <thead><tr>
+      <th style="width:36px" aria-label="담기"></th>
+      <th>상품</th>
+      <th class="hide-sm">분류</th>
+      <th class="num">할인가</th>
+      <th class="num">할인율</th>
+      <th>종료</th>
+    </tr></thead>
+    <tbody id="tb"></tbody>
+  </table>
+  <div class="empty" id="empty" hidden>조건에 맞는 상품이 없습니다.</div>
+</div>
+
+<footer>
+  <div>갱신: __GENERATED__ · 코스트코 코리아 매장 행사안내와 주간 할인 데이터를 정리했습니다.</div>
+  <div>정상가가 공개되지 않은 품목은 할인가와 할인율만 표기했습니다. 구매 전 매장 가격표를 확인하세요.</div>
+</footer>
+</div>
+
+<script>
+const PAYLOAD=__DATA__;
+const TODAY=PAYLOAD.today;
+const DATA=PAYLOAD.items;
+const won=n=>n.toLocaleString('ko-KR')+'원';
+const dayDiff=(a,b)=>Math.round((new Date(b)-new Date(a))/86400000);
+
+DATA.forEach(r=>{
+  r.d = r.e ? dayDiff(TODAY, r.e) : 999;
+  r.g = r.d<=2 ? 'urgent' : (r.d<=7 ? 'week' : 'later');
+  r.label = r.e ? r.e.slice(5).replace('-','.') : '미표기';
+});
+const CATS=[...new Set(DATA.map(r=>r.c))];
+
+document.getElementById('total').textContent=DATA.length;
+document.getElementById('s-all').textContent=DATA.length;
+document.getElementById('s-urgent').textContent=DATA.filter(r=>r.g==='urgent').length;
+document.getElementById('s-week').textContent=DATA.filter(r=>r.g==='week').length;
+document.getElementById('s-later').textContent=DATA.filter(r=>r.g==='later').length;
+
+let grp='all', cat='all';
+const KEY='costco-picks';
+let picks=new Set();
+try{const s=localStorage.getItem(KEY); if(s) picks=new Set(JSON.parse(s));}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify([...picks]));}catch(e){}};
+
+const catbox=document.getElementById('catchips');
+catbox.innerHTML=['all',...CATS].map(c=>
+  `<button class="chip" data-c="${c}" aria-pressed="${c==='all'}">${c==='all'?'전체 분류':c}</button>`).join('');
+
+function render(){
+  const q=document.getElementById('q').value.trim().toLowerCase();
+  const s=document.getElementById('sort').value;
+  let list=DATA.filter(r=>
+    (grp==='all'||r.g===grp) && (cat==='all'||r.c===cat) &&
+    (!q||r.n.toLowerCase().includes(q)));
+  const cmp={
+    rate:(a,b)=>b.r-a.r||a.p-b.p,
+    price:(a,b)=>a.p-b.p,
+    priced:(a,b)=>b.p-a.p,
+    end:(a,b)=>a.d-b.d||b.r-a.r,
+    name:(a,b)=>a.n.localeCompare(b.n,'ko')
+  }[s];
+  list=[...list].sort(cmp);
+  document.getElementById('count').textContent=list.length+'건';
+  document.getElementById('empty').hidden=list.length>0;
+  document.getElementById('tb').innerHTML=list.map(r=>{
+    const id=r.c+'|'+r.n;
+    const on=picks.has(id);
+    const tag=r.g==='urgent'?'<span class="tag">마감 임박</span>':'';
+    return `<tr class="${on?'done':''}">
+      <td><input type="checkbox" data-id="${id.replace(/"/g,'&quot;')}" ${on?'checked':''} aria-label="담기"></td>
+      <td class="nm">${r.n}</td>
+      <td class="cat hide-sm">${r.c}</td>
+      <td class="num price">${won(r.p)}</td>
+      <td class="num"><span class="rate ${r.r>=25?'hot':''}">${r.r}%</span></td>
+      <td class="end ${r.g==='urgent'?'urgent':''}">${r.label}${tag}</td>
+    </tr>`;
+  }).join('');
+}
+
+document.getElementById('tb').addEventListener('change',e=>{
+  const cb=e.target.closest('input[type=checkbox]'); if(!cb) return;
+  const id=cb.dataset.id;
+  cb.checked?picks.add(id):picks.delete(id);
+  save(); cb.closest('tr').classList.toggle('done',cb.checked);
+});
+document.getElementById('q').addEventListener('input',render);
+document.getElementById('sort').addEventListener('change',render);
+document.getElementById('grpchips').addEventListener('click',e=>{
+  const b=e.target.closest('.chip'); if(!b) return;
+  grp=b.dataset.g;
+  [...e.currentTarget.children].forEach(c=>c.setAttribute('aria-pressed',c===b));
+  render();
+});
+catbox.addEventListener('click',e=>{
+  const b=e.target.closest('.chip'); if(!b) return;
+  cat=b.dataset.c;
+  [...e.currentTarget.children].forEach(c=>c.setAttribute('aria-pressed',c===b));
+  render();
+});
+render();
+</script>
+</body>
+</html>
