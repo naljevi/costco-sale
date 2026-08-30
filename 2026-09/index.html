@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>코스트코 9월 할인표</title>
+<meta name="description" content="9월 회원 특별할인(8/31~9/27) 전 품목과 9월까지 이어지는 주간 할인 76건. 검색·정렬됩니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="코스트코 9월 할인표">
+<meta property="og:description" content="9월 회원 특별할인 23품목 + 9월까지 이어지는 주간 할인. 2026년 8월 30일 기준.">
+<meta property="og:locale" content="ko_KR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#FBF8F4; --surface:#FFFFFF; --surface2:#F5F0E9;
+  --ink:#1F1A17; --muted:#7C716A; --line:#E7DFD5;
+  --accent:#A81E28; --accent-soft:#F6E4E2; --on-accent:#FFFFFF;
+  --warn:#9A5400; --warn-soft:#FAECD9;
+  --calm:#2F6B5E; --calm-soft:#E1EFEA;
+  --shadow:0 1px 2px rgba(31,26,23,.06),0 8px 24px -16px rgba(31,26,23,.25);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#15120F; --surface:#1E1A16; --surface2:#241F1A;
+    --ink:#F1EBE4; --muted:#A3968C; --line:#332C25;
+    --accent:#E9737B; --accent-soft:#3A2222; --on-accent:#1B1210;
+    --warn:#E0A458; --warn-soft:#3A2C1A;
+    --calm:#7FC4B2; --calm-soft:#1D2E2A;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15120F; --surface:#1E1A16; --surface2:#241F1A;
+  --ink:#F1EBE4; --muted:#A3968C; --line:#332C25;
+  --accent:#E9737B; --accent-soft:#3A2222; --on-accent:#1B1210;
+  --warn:#E0A458; --warn-soft:#3A2C1A;
+  --calm:#7FC4B2; --calm-soft:#1D2E2A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans KR",-apple-system,BlinkMacSystemFont,"Malgun Gothic",sans-serif;
+  font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 20px 80px;display:flex;flex-direction:column;gap:28px}
+header{display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--line);padding-bottom:24px}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:"Gowun Batang",Georgia,serif;font-weight:700;font-size:clamp(28px,5vw,42px);line-height:1.2;margin:0;text-wrap:balance}
+.sub{color:var(--muted);font-size:14px;max-width:62ch;margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:2px}
+.stat b{font-size:24px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}
+.stat span{font-size:12px;color:var(--muted)}
+.stat.urgent b{color:var(--warn)}
+.controls{display:flex;flex-direction:column;gap:12px;position:sticky;top:0;background:var(--bg);padding:12px 0;z-index:5;border-bottom:1px solid var(--line)}
+.row1{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+input[type=search],select{font-family:inherit;font-size:14px;color:var(--ink);background:var(--surface);
+  border:1px solid var(--line);border-radius:8px;padding:9px 12px}
+input[type=search]{flex:1;min-width:200px}
+input[type=search]:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-family:inherit;font-size:12.5px;cursor:pointer;border-radius:999px;
+  border:1px solid var(--line);background:var(--surface);color:var(--muted);
+  padding:6px 12px;transition:background .15s,color .15s,border-color .15s}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.count{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:640px}
+thead th{position:sticky;top:0;background:var(--surface2);color:var(--muted);
+  font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+  text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+th.num,td.num{text-align:right;font-variant-numeric:tabular-nums}
+tbody td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--surface2)}
+tr.done td{opacity:.42}
+tr.done .nm{text-decoration:line-through}
+.nm{font-weight:500}
+.cat{font-size:11.5px;color:var(--muted);white-space:nowrap}
+.price{font-weight:600;font-size:15px}
+.rate{display:inline-block;min-width:44px;text-align:center;border-radius:6px;padding:2px 7px;
+  font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums;background:var(--calm-soft);color:var(--calm)}
+.rate.hot{background:var(--accent-soft);color:var(--accent)}
+.end{font-size:12.5px;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--muted)}
+.end.urgent{color:var(--warn);font-weight:600}
+.end .tag{display:block;font-size:10.5px;letter-spacing:.05em}
+.lim{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:2px}
+input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent);cursor:pointer}
+.empty{padding:40px;text-align:center;color:var(--muted);font-size:14px}
+footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:20px;display:flex;flex-direction:column;gap:6px}
+@media (max-width:640px){.wrap{padding:24px 14px 60px}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">9월 회원 특별할인 · 8월 31일(월) ~ 9월 27일(일)</div>
+  <h1>9월 코스트코 할인표</h1>
+  <p class="sub">9월 회원 특별할인 전 품목과, 9월까지 이어지는 주간 할인을 합쳐 <b id="total">0</b>건. 쿠폰북 품목은 정상가가 공개되지 않아 할인액으로 표기했습니다.</p>
+</header>
+
+<div class="stats">
+  <div class="stat"><b id="s-all">0</b><span>전체 품목</span></div>
+  <div class="stat urgent"><b id="s-coupon">0</b><span>9월 회원 특별할인</span></div>
+  <div class="stat"><b id="s-week">0</b><span>9월 6일까지 마감</span></div>
+  <div class="stat"><b id="s-later">0</b><span>9월 중순 이후까지</span></div>
+</div>
+
+<div class="controls">
+  <div class="row1">
+    <input type="search" id="q" placeholder="상품명 검색 (예: 스팸, 만두, 위스키)" aria-label="상품명 검색">
+    <select id="sort" aria-label="정렬">
+      <option value="coupon">쿠폰북 먼저</option>
+      <option value="rate">할인율 높은 순</option>
+      <option value="price">가격 낮은 순</option>
+      <option value="priced">가격 높은 순</option>
+      <option value="end">마감 빠른 순</option>
+      <option value="name">이름순</option>
+    </select>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="chips" id="grpchips">
+    <button class="chip" data-g="all" aria-pressed="true">전체</button>
+    <button class="chip" data-g="coupon" aria-pressed="false">쿠폰북만</button>
+    <button class="chip" data-g="week" aria-pressed="false">9/6까지</button>
+    <button class="chip" data-g="later" aria-pressed="false">9월 중순 이후</button>
+  </div>
+  <div class="chips" id="catchips"></div>
+</div>
+
+<div class="tablewrap">
+  <table>
+    <thead><tr>
+      <th style="width:36px" aria-label="담기"></th>
+      <th>상품</th>
+      <th class="hide-sm">분류</th>
+      <th class="num">할인가 / 할인액</th>
+      <th class="num">할인율</th>
+      <th>종료</th>
+    </tr></thead>
+    <tbody id="tb"></tbody>
+  </table>
+  <div class="empty" id="empty" hidden>조건에 맞는 상품이 없습니다.</div>
+</div>
+
+<footer>
+  <div>기준: 2026년 08월 30일 14:00 · 코스트코 코리아 매장 행사안내(9월 회원 특별할인)와 주간 할인 데이터를 정리했습니다.</div>
+  <div>9월 회원 특별할인은 8월 31일(월)부터 적용됩니다. 쿠폰북 품목은 정상가가 공개되지 않아 할인액만 표기했습니다.</div>
+  <div>제조사 사정으로 사전 공지 없이 변경되거나 조기 종료될 수 있습니다. 구매 전 매장 가격표를 확인하세요.</div>
+</footer>
+</div>
+
+<script>
+const PAYLOAD={"generated":"2026-08-30T14:00:00+09:00","today":"2026-08-30","count":76,"items":[{"c":"9월 회원 특별할인","n":"LG OLED AI B TV 77형 + 사운드바","p":0,"r":0,"e":"2026-09-27","cut":1100000,"lim":"5개"},{"c":"9월 회원 특별할인","n":"LG 오브제 워시콤보","p":0,"r":0,"e":"2026-09-27","cut":800000,"lim":"5개"},{"c":"9월 회원 특별할인","n":"삼성 Neo QLED TV 85형 (200대 한정)","p":0,"r":0,"e":"2026-09-27","cut":700000,"lim":"5개"},{"c":"9월 회원 특별할인","n":"LG OLED AI B TV 65형","p":0,"r":0,"e":"2026-09-27","cut":700000,"lim":"5개"},{"c":"9월 회원 특별할인","n":"LG 오브제 스타일러 5벌","p":0,"r":0,"e":"2026-09-27","cut":320000,"lim":"5개"},{"c":"9월 회원 특별할인","n":"필립스 전기 면도기 6000 시리즈","p":0,"r":0,"e":"2026-09-27","cut":40000,"lim":"제한 없음"},{"c":"9월 회원 특별할인","n":"보스 플렉스 SE 2세대 블루투스 스피커","p":0,"r":0,"e":"2026-09-27","cut":30000,"lim":"5개"},{"c":"9월 회원 특별할인","n":"스위스 밀리터리 여행가방 51cm","p":0,"r":0,"e":"2026-09-27","cut":18000,"lim":"제한 없음"},{"c":"9월 회원 특별할인","n":"벤딕트 무선 청소기 21,000PA","p":0,"r":0,"e":"2026-09-27","cut":15000,"lim":"제한 없음"},{"c":"9월 회원 특별할인","n":"유세린 나이트 크림","p":0,"r":0,"e":"2026-09-27","cut":14000,"lim":"5개"},{"c":"9월 회원 특별할인","n":"테팔 핸드 블렌더","p":0,"r":0,"e":"2026-09-27","cut":12000,"lim":"제한 없음"},{"c":"9월 회원 특별할인","n":"에버홈 디지털 스테인리스 찜기 2단","p":0,"r":0,"e":"2026-09-27","cut":12000,"lim":"제한 없음"},{"c":"9월 회원 특별할인","n":"숨 시크릿 에센스","p":0,"r":0,"e":"2026-09-27","cut":10000,"lim":"5개"},{"c":"9월 회원 특별할인","n":"헤라 센슈얼 누드 밤","p":0,"r":0,"e":"2026-09-27","cut":10000,"lim":"5개"},{"c":"9월 회원 특별할인","n":"도미나스 하이퍼 피토닝 앰플","p":0,"r":0,"e":"2026-09-27","cut":8000,"lim":"5개"},{"c":"9월 회원 특별할인","n":"불스원샷 프리미엄 연료 첨가제 500ml x3","p":0,"r":0,"e":"2026-09-27","cut":7000,"lim":"제한 없음"},{"c":"9월 회원 특별할인","n":"수려한 비책진생 윤 2X 크림","p":0,"r":0,"e":"2026-09-27","cut":7000,"lim":"5개"},{"c":"9월 회원 특별할인","n":"수려한 비책진생 윤 2X 스킨","p":0,"r":0,"e":"2026-09-27","cut":6000,"lim":"5개"},{"c":"9월 회원 특별할인","n":"수려한 비책진생 윤 2X 에멀전","p":0,"r":0,"e":"2026-09-27","cut":6000,"lim":"5개"},{"c":"9월 회원 특별할인","n":"삼성 27 게이밍 모니터","p":0,"r":0,"e":"2026-09-27","cut":5000,"lim":"1개"},{"c":"9월 회원 특별할인","n":"롤키친 스테인리스 야채 탈수기 4.5L","p":0,"r":0,"e":"2026-09-27","cut":4500,"lim":"제한 없음"},{"c":"9월 회원 특별할인","n":"오마뎅 진짜 부산 떡볶이 352g x5","p":0,"r":0,"e":"2026-09-13","cut":3800,"lim":"제한 없음"},{"c":"9월 회원 특별할인","n":"아비노 바디워시 1L","p":0,"r":0,"e":"2026-09-27","cut":3000,"lim":"5개"},{"c":"식품","n":"BELL'S 스카치 위스키 1L","p":13590,"r":35,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"BALANCE GROW 제주 감귤 주스 2L X 2","p":8790,"r":31,"e":"2026-09-06","cut":0,"lim":""},{"c":"의류/가방/잡화","n":"DC 하이브리드 워터티 S-XL","p":15970,"r":27,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"BACARDI 슈페리에 럼 1L","p":19990,"r":27,"e":"2026-09-07","cut":0,"lim":""},{"c":"스포츠/헬스/캠핑","n":"VOLVIK 플라이온 골프공 2피스 24개입","p":19990,"r":26,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"BONDUELLE 봉듀엘 완두콩 400G X 3","p":7490,"r":25,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"4C 아이스티 복숭아 2.34KG","p":10290,"r":25,"e":"2026-09-06","cut":0,"lim":""},{"c":"스포츠/헬스/캠핑","n":"KASMO 자전거 헬멧 성인용","p":18990,"r":24,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"POLARETTI 후르트 아이스바 40ML X 80","p":13490,"r":23,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"JIM BEAM 버번 위스키 1L","p":27490,"r":23,"e":"2026-09-04","cut":0,"lim":""},{"c":"가구/침구/인테리어","n":"ZINUS 스프링 매트리스 SS 1100 X 2000 X 200MM","p":197900,"r":23,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"남양 떠먹는 불가리스 85G X 16","p":6990,"r":22,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"오랑지나 탄산 음료 355ML X 24캔","p":15990,"r":22,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"SNICKERS 펀 사이즈 초콜릿 1360G","p":17990,"r":22,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"ALLO 선식 크래커 블랙 700G","p":9490,"r":21,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"삼진어묵 정통 어묵탕 모듬 1188G","p":10290,"r":21,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"THE LAUGHING COW 플레인 포션 치즈 360G","p":11090,"r":21,"e":"2026-09-02","cut":0,"lim":""},{"c":"식품","n":"HEINEKEN 캔맥주 500ML X 8캔","p":12690,"r":21,"e":"2026-09-28","cut":0,"lim":""},{"c":"식품","n":"웰치스 탄산 소다 포도맛 355ML X 24캔","p":13490,"r":21,"e":"2026-09-02","cut":0,"lim":""},{"c":"홈/키친","n":"SKANDIA 칼 세트 5P","p":14970,"r":21,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"농심 신라면 블랙 134G X 16","p":14990,"r":21,"e":"2026-09-13","cut":0,"lim":""},{"c":"의류/가방/잡화","n":"COTTON CLUB 면 80수 탱크 3매 95-105","p":14990,"r":21,"e":"2026-09-06","cut":0,"lim":""},{"c":"의류/가방/잡화","n":"HALSTON 여성 반소매 니트 S,M,L","p":18990,"r":21,"e":"2026-09-13","cut":0,"lim":""},{"c":"공구/생활/자동차","n":"BULLSONE 그라스 디퓨저 105ML 3개","p":24990,"r":21,"e":"2026-09-06","cut":0,"lim":""},{"c":"의류/가방/잡화","n":"FILA GOLF 남성 골프 바지 M-XXL","p":29990,"r":21,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"로버트 몬다비 나파 까베르네 쇼비뇽 750ML","p":78900,"r":21,"e":"2026-09-06","cut":0,"lim":""},{"c":"스포츠/헬스/캠핑","n":"GIRAFFE 가스 바베큐 그릴 44 X 26 X 10CM","p":104900,"r":21,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"봉지 굴 (대) 500G 국산","p":9990,"r":20,"e":"2026-12-31","cut":0,"lim":""},{"c":"홈/키친","n":"라브아 섬유 탈취제 500ML X 3","p":11790,"r":20,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"BALANCE GROW 룩얼라이브 진저샷 20G X 30","p":11990,"r":20,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"MAMA'S CHOICE 후라이드 쥐포 튀김 300G","p":11990,"r":20,"e":"2026-09-06","cut":0,"lim":""},{"c":"홈/키친","n":"고로고로 테이프 클리너 리필 6EA","p":11990,"r":20,"e":"2026-09-06","cut":0,"lim":""},{"c":"홈/키친","n":"비트 세탁 세제 7KG","p":11990,"r":20,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"곰표 후라이드 오징어 270G","p":15990,"r":20,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"BE KIND 다크 초콜릿 너트바 480G","p":15990,"r":20,"e":"2026-09-06","cut":0,"lim":""},{"c":"홈/키친","n":"스카트 유리 거울 세정 티슈 30매 X 8","p":15990,"r":20,"e":"2026-09-13","cut":0,"lim":""},{"c":"유아동/완구/반려동물","n":"AMOS 아모스 글라스 데코 산리오 캐릭터즈","p":15990,"r":20,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"KRAFT A1 스테이크 소스 425G X 3병","p":16790,"r":20,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"반피 로사 리갈레 아스티 750ML","p":18390,"r":20,"e":"2026-09-13","cut":0,"lim":""},{"c":"식품","n":"클라우드라인 피노누아 750ML","p":23990,"r":20,"e":"2026-09-13","cut":0,"lim":""},{"c":"의류/가방/잡화","n":"COUNTESS MARA 남성 반소매 폴로 S-XXL","p":23990,"r":20,"e":"2026-09-06","cut":0,"lim":""},{"c":"의류/가방/잡화","n":"PUMA 여성 운동화 230-250MM","p":29490,"r":20,"e":"2026-09-13","cut":0,"lim":""},{"c":"식품","n":"JACK DANIEL'S 테네시 위스키 1L","p":44690,"r":20,"e":"2026-09-27","cut":0,"lim":""},{"c":"식품","n":"JACK DANIEL'S 테네시 애플 위스키 1L","p":44690,"r":20,"e":"2026-09-27","cut":0,"lim":""},{"c":"가구/침구/인테리어","n":"파크론 PVC 롤매트 140 X 300 X 2.0CM","p":93900,"r":20,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"카프리선 오렌지 망고 주스 200ML X 20","p":8590,"r":18,"e":"2026-09-02","cut":0,"lim":""},{"c":"식품","n":"DORLY 오곡 찹쌀떡 640G","p":9990,"r":17,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"호밍스 남도 추어탕 600G X 4","p":17490,"r":17,"e":"2026-09-13","cut":0,"lim":""},{"c":"식품","n":"ASAHI 쇼쿠사이 340ML X 12캔","p":19790,"r":16,"e":"2026-09-01","cut":0,"lim":""},{"c":"식품","n":"SAPPORO 캔맥주 500ML X 6캔","p":10190,"r":15,"e":"2026-09-20","cut":0,"lim":""},{"c":"식품","n":"매일 무지방 그릭 요거트 907G X 2","p":10990,"r":15,"e":"2026-09-01","cut":0,"lim":""},{"c":"식품","n":"KELLOGGS 컵 시리얼 40G X 18","p":16990,"r":15,"e":"2026-09-06","cut":0,"lim":""},{"c":"식품","n":"여주시 농협 여주쌀 10KG","p":37490,"r":11,"e":"2026-09-06","cut":0,"lim":""}]};
+const TODAY=PAYLOAD.today;
+const DATA=PAYLOAD.items;
+const won=n=>n.toLocaleString('ko-KR')+'원';
+const dayDiff=(a,b)=>Math.round((new Date(b)-new Date(a))/86400000);
+
+DATA.forEach(r=>{
+  r.d = r.e ? dayDiff(TODAY, r.e) : 999;
+  r.coupon = r.c.indexOf('회원 특별할인') >= 0;
+  r.g = r.coupon ? 'coupon' : (r.d<=7 ? 'week' : 'later');
+  r.label = r.e ? r.e.slice(5).replace('-','.') : '미표기';
+});
+const CATS=[...new Set(DATA.map(r=>r.c))];
+
+document.getElementById('total').textContent=DATA.length;
+document.getElementById('s-all').textContent=DATA.length;
+document.getElementById('s-coupon').textContent=DATA.filter(r=>r.coupon).length;
+document.getElementById('s-week').textContent=DATA.filter(r=>r.g==='week').length;
+document.getElementById('s-later').textContent=DATA.filter(r=>r.g==='later').length;
+
+let grp='all', cat='all';
+const KEY='costco-picks';
+let picks=new Set();
+try{const s=localStorage.getItem(KEY); if(s) picks=new Set(JSON.parse(s));}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify([...picks]));}catch(e){}};
+
+const catbox=document.getElementById('catchips');
+catbox.innerHTML=['all',...CATS].map(c=>
+  `<button class="chip" data-c="${c}" aria-pressed="${c==='all'}">${c==='all'?'전체 분류':c}</button>`).join('');
+
+function render(){
+  const q=document.getElementById('q').value.trim().toLowerCase();
+  const s=document.getElementById('sort').value;
+  let list=DATA.filter(r=>
+    (grp==='all'||r.g===grp) && (cat==='all'||r.c===cat) &&
+    (!q||r.n.toLowerCase().includes(q)));
+  const cmp={
+    coupon:(a,b)=>(b.coupon-a.coupon)||(b.cut-a.cut)||(b.r-a.r)||(a.p-b.p),
+    rate:(a,b)=>b.r-a.r||a.p-b.p,
+    price:(a,b)=>a.p-b.p,
+    priced:(a,b)=>b.p-a.p,
+    end:(a,b)=>a.d-b.d||b.r-a.r,
+    name:(a,b)=>a.n.localeCompare(b.n,'ko')
+  }[s];
+  list=[...list].sort(cmp);
+  document.getElementById('count').textContent=list.length+'건';
+  document.getElementById('empty').hidden=list.length>0;
+  document.getElementById('tb').innerHTML=list.map(r=>{
+    const id=r.c+'|'+r.n;
+    const on=picks.has(id);
+    const tag=r.coupon?'<span class="tag">쿠폰북</span>':'';
+    const priceCell = r.p>0 ? won(r.p) : ('&minus;'+won(r.cut));
+    const rateCell = r.p>0 ? `<span class="rate ${r.r>=25?'hot':''}">${r.r}%</span>`
+                           : `<span class="rate hot">할인액</span>`;
+    const sub = r.lim ? `<small class="lim">구매제한 ${r.lim}</small>` : '';
+    return `<tr class="${on?'done':''}">
+      <td><input type="checkbox" data-id="${id.replace(/"/g,'&quot;')}" ${on?'checked':''} aria-label="담기"></td>
+      <td class="nm">${r.n}${sub}</td>
+      <td class="cat hide-sm">${r.c}</td>
+      <td class="num price">${priceCell}</td>
+      <td class="num">${rateCell}</td>
+      <td class="end ${r.coupon?'urgent':''}">${r.label}${tag}</td>
+    </tr>`;
+  }).join('');
+}
+
+document.getElementById('tb').addEventListener('change',e=>{
+  const cb=e.target.closest('input[type=checkbox]'); if(!cb) return;
+  const id=cb.dataset.id;
+  cb.checked?picks.add(id):picks.delete(id);
+  save(); cb.closest('tr').classList.toggle('done',cb.checked);
+});
+document.getElementById('q').addEventListener('input',render);
+document.getElementById('sort').addEventListener('change',render);
+document.getElementById('grpchips').addEventListener('click',e=>{
+  const b=e.target.closest('.chip'); if(!b) return;
+  grp=b.dataset.g;
+  [...e.currentTarget.children].forEach(c=>c.setAttribute('aria-pressed',c===b));
+  render();
+});
+catbox.addEventListener('click',e=>{
+  const b=e.target.closest('.chip'); if(!b) return;
+  cat=b.dataset.c;
+  [...e.currentTarget.children].forEach(c=>c.setAttribute('aria-pressed',c===b));
+  render();
+});
+render();
+</script>
+</body>
+</html>
