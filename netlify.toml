@@ -1,18 +1,8 @@
-# Netlify 설정 파일
-# 이 파일은 저장소 맨 위(첫 화면)에 둡니다. costco-sale 폴더 안이 아닙니다.
-
 [build]
-  # 실제 사이트 파일이 들어 있는 폴더
-  publish = "costco-sale"
+  publish = "."
 
-# 사이트 첫 주소로 들어온 방문자를 블로그 글로 보냅니다.
-# 나중에 다른 글로 바꾸려면 아래 to = 주소만 고치면 됩니다.
 [[redirects]]
   from = "/"
   to = "https://blog.naver.com/gooday3982/224391225005"
   status = 302
   force = true
-
-# 표는 /table/ 에서 계속 열립니다.
-# 블로그 본문에는 이 주소로 링크하세요.
-#   https://costco-sale-kr.netlify.app/table/
