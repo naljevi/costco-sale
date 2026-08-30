@@ -1,9 +1,17 @@
 #!/usr/bin/env python3
-"""data.json을 template.html에 끼워 넣어 index.html을 만든다."""
+"""data.json을 template.html에 끼워 넣어 table/index.html을 만든다.
+
+표는 /table/ 경로에 둔다.
+사이트 첫 주소(/)는 _redirects 설정에 따라 블로그로 넘어간다.
+"""
 
 import json
+import os
 import sys
 from datetime import datetime
+
+OUT_DIR = "table"
+OUT_FILE = os.path.join(OUT_DIR, "index.html")
 
 
 def main() -> int:
@@ -35,10 +43,11 @@ def main() -> int:
         .replace("__GENERATED__", pretty)
     )
 
-    with open("index.html", "w", encoding="utf-8") as f:
+    os.makedirs(OUT_DIR, exist_ok=True)
+    with open(OUT_FILE, "w", encoding="utf-8") as f:
         f.write(html)
 
-    print(f"index.html 생성 완료 — {len(items)}건")
+    print(f"{OUT_FILE} 생성 완료 — {len(items)}건")
     return 0
 
 
